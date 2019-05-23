@@ -32,7 +32,7 @@ make docker_build
 or...
 
 ```sh
-docker build -f "$(pwd)/build/package/Dockerfile" -t go-dev:latest .
+docker build -f "$(pwd)/build/package/Dockerfile" -t go-docker:latest .
 ```
 
 ## Run container without docker-compose
@@ -44,7 +44,7 @@ make docker_run
 or...
 
 ```sh
-docker run -v "$(pwd)":/go/src/github.com/teamsnap/go-dev -it go-dev:latest bash
+docker run -v "$(pwd)":/go/src/github.com/teamsnap/go-docker -it go-docker:latest bash
 ```
 
 ## Build binaries (MacOS and Linux)
@@ -56,21 +56,21 @@ make build
 ```
 
 Will output
-- `2.0M	./go-dev.darwin`
-- `1.9M	./go-dev.linux`
+- `2.0M	./go-docker.darwin`
+- `1.9M	./go-docker.linux`
 
 ## Run binaries
 
 From inside the container:
 
 ```sh
-./go-dev.linux
+./go-docker.linux
 ```
 
 From on host machine (MacOS):
 
 ```sh
-./go-dev.darwin
+./go-docker.darwin
 ```
 
 ### Directory Structure
@@ -86,7 +86,7 @@ From on host machine (MacOS):
 │   └── root.go
 ├── deployments
 │   └── docker-compose.yml
-├── go-dev.darwin
-├── go-dev.linux
+├── go-docker.darwin
+├── go-docker.linux
 └── main.go
 ```

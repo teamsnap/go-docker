@@ -2,7 +2,7 @@
 SHELL := /bin/bash
 BASE_DIR := $(shell pwd)
 UNAME_S := $(shell uname -s)
-APP_NAME := go-dev
+APP_NAME := go-docker
 
 export
 # ===================== [END] Global Variable Declaration ==================== #

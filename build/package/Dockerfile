@@ -29,6 +29,6 @@ RUN apk add --no-cache \
  && rm "${TEMP_DL_DIR}/install-dep.sh" \
  && go get -u golang.org/x/lint/golint
 
-WORKDIR /go/src/github.com/teamsnap/go-dev
+WORKDIR /go/src/github.com/teamsnap/go-docker
 
 CMD bash

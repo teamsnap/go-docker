@@ -2,6 +2,11 @@ kind: pipeline
 name: default
 
 steps:
+- name: ping
+  image: redis
+  commands:
+  - redis-cli -h cache ping
+
 - name: frontend
   image: node
   commands:
@@ -10,13 +15,8 @@ steps:
 - name: backend
   image: golang
   commands:
-  - env GOOS=linux GOARCH=amd64 go build -o go-dev.linux
-  - env GOOS=darwin GOARCH=amd64 go build -o go-dev.darwin
-
-- name: ping
-  image: redis
-  commands:
-  - redis-cli -h cache ping
+  - env GOOS=linux GOARCH=amd64 go build -o go-docker.linux
+  - env GOOS=darwin GOARCH=amd64 go build -o go-docker.darwin
 
 services:
 - name: cache

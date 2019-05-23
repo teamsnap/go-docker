@@ -2,7 +2,7 @@
 
 package main
 
-import "github.com/teamsnap/go-dev/cmd"
+import "github.com/teamsnap/go-docker/cmd"
 
 func main() {
 	cmd.Execute()

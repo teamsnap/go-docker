@@ -2,12 +2,12 @@ version: '3.7'
 services:
   golang:
     container_name: golang
-    image: teamsnap/go-dev:latest
+    image: teamsnap/go-docker:latest
     command: ["tail", "-f", "/dev/null"]
     build:
       context: ..
       dockerfile: build/package/Dockerfile
     volumes:
-      - ..:/go/src/github.com/teamsnap/go-dev
+      - ..:/go/src/github.com/teamsnap/go-docker
     ports:
       - 6060:6060
