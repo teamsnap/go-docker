@@ -34,11 +34,12 @@ docker_run:
 		-p 6060:6060 \
 	 teamsnap/$(APP_NAME):latest bash
 
-docker_compose_start:
+start:
 	@echo "Forwarding port 6060 for godoc usage within the container."
 	@docker-compose -f $(BASE_DIR)/deployments/docker-compose.yml up -d
+	@docker exec -it golang bash
 
-docker_compose_stop:
+stop:
 	@docker-compose -f $(BASE_DIR)/deployments/docker-compose.yml down
 # ============================= [END] Run Scripts ============================ #
 

@@ -8,7 +8,7 @@ TLDR: Update `cmd/root.go` to print something different to your terminal when yo
 ## Build and Run with docker-compose
 
 ```sh
-make docker_compose_start
+make start
 ```
 
 ### Bash into container
@@ -20,7 +20,7 @@ docker exec -it golang bash
 ### Stop docker-compose
 
 ```sh
-make docker_compose_stop
+make stop
 ```
 
 ## Build image explicitly
